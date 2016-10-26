@@ -83,23 +83,6 @@ int main()
 	minuteHand.setPosition(windowCenter);
 	secondsHand.setPosition(windowCenter);
 
-	// Create sound effect
-	/*sf::Music clockTick;
-	if (!clockTick.openFromFile("resources/clock-1.wav"))
-		return EXIT_FAILURE;
-	clockTick.setLoop(true);
-	clockTick.play();*/
-
-	// Create clock background
-	sf::Texture clockImage;
-	if (!clockImage.loadFromFile("resources/clock-image.png"))
-	{
-		return EXIT_FAILURE;
-	}
-
-	clockCircle.setTexture(&clockImage);
-	clockCircle.setTextureRect(sf::IntRect(40, 0, 500, 500));
-
 	sf::Font font;
 	if (!font.loadFromFile("resources/comic.ttf"))
 	{
@@ -164,7 +147,7 @@ int main()
 		{
 			window.draw(dial[i]);
 		}
-		//window.draw(clockBrandSprite);
+		// Display clock
 		window.draw(hourHand);
 		window.draw(minuteHand);
 		window.draw(secondsHand);
